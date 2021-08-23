@@ -28,7 +28,7 @@ export default App = () => {
   };
 
   const requestPermissionLib = () => {
-    check(PERMISSIONS.ACCESS_FINE_LOCATION).then(result => {
+    check(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION).then(result => {
       switch (result) {
         case RESULTS.UNAVAILABLE:
           console.log(
@@ -39,7 +39,7 @@ export default App = () => {
           console.log(
             'The permission has not been requested / is denied but requestable',
           );
-          request(PERMISSIONS.ACCESS_FINE_LOCATION).then(result => {
+          request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION).then(result => {
             console.log(`The permission is: ${result}`);
           });
           break;
